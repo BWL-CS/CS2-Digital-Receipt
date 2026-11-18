@@ -1,0 +1,1 @@
+School = input.nextLine();
