@@ -14,6 +14,7 @@ public class Main {
   public static void main(String [] args) {
      // RECEIPT PRINTOUT SECTION
      int orderNumber = (int) (Math.random() * 100 + 1);
+     //The pact D code won't work with this still here
       //int drinksOrdered = (int) (Math.random() * 3);
       //int candiesOrdered = (int) (Math.random() * 3);
       //int hotdogsOrdered = (int) (Math.random() * 3);
@@ -29,9 +30,10 @@ public class Main {
       double hamburgerPrice = 3.50;
       double taxRate = 0.05;
       double subTotal;
+      //need to move to to make sure that it is updated
       //double totalTax = subTotal*taxRate;
       //double total = subTotal+totalTax;
-     // double value = ((int)(total * 100)/100.0);
+      //double value = ((int)(total * 100)/100.0);
       Scanner input = new Scanner(System.in);
       System.out.print("How many drinks?");
       String drinksOrderedInput = input.nextLine();
@@ -45,6 +47,7 @@ public class Main {
       String nameOfSchool = input.nextLine();
       nameOfSchool = nameOfSchool.trim();
       String initials = nameOfSchool.substring(0, 1);
+      //need a loop instead of the previouse one b/c previouse one was too on-the-dot specific
       for (int i = 0; i < nameOfSchool.length() - 1; i++) {
         if (nameOfSchool.substring(i, i + 1).equals(" ")) {
         initials = initials + nameOfSchool.substring(i + 1, i + 2);
@@ -73,6 +76,7 @@ public class Main {
      //System.out.println("*                                    *");
      //System.out.println("*                                    *");    
      //System.out.println("**************************************");
+  //improved print scetion
    String row = "* %-34s *%n";
    String border = "*".repeat(38);
 
