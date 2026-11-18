@@ -77,9 +77,10 @@ public class Main {
      //System.out.println("*                                    *");    
      //System.out.println("**************************************");
   //improved print scetion
+  //claude
    String row = "* %-34s *%n";
    String border = "*".repeat(38);
-
+//added to printed section
   System.out.println(border);
   System.out.printf(row, "");
   System.out.printf(row, center(initials + " Snack Bar", 34));
