@@ -5,9 +5,10 @@ import java.util.Scanner;
 
 public class Main {
 
-  
-  
-  
+  public static String center(String text, int width) {
+    int leftSpaces = Math.max(0, (width - text.length()) / 2);
+    return " ".repeat(leftSpaces) + text;
+ }
   
   
   public static void main(String [] args) {
@@ -59,18 +60,33 @@ public class Main {
       double total = subTotal+totalTax;
       double value = ((int)(total * 100)/100.0);
 
-     System.out.println("**************************************");
-     System.out.println("*                                    *");
-     System.out.println("*          " + initials + " Snack Bar             *");
-     System.out.println("*                                    *");
-     System.out.println("*     " +drinksOrderedInput + " " + itemList1 + "..........$" + drinkPrice +     "          *");                      
-     System.out.println("*     " + candiesOrderedInput +" "+ itemList2 + "..........$" + candyPrice    +    "         *");     
-     System.out.println("*     " + hotdogsOrderedInput + " "+ itemList3 + "..........$" + hotDogPrice +       "       *");     
-     System.out.println("*     "+ hamburgersOrderedInput +" "+ itemList4 +"..........$" + hamburgerPrice +       "      *");     
-     System.out.println("*     Order number: " + orderNumber +            "               *"); 
-    System.out.println("*     Total Cost: $"   + value+                            "             *");   
-     System.out.println("*                                    *");
-     System.out.println("*                                    *");    
-     System.out.println("**************************************");
+     //System.out.println("**************************************");
+     //System.out.println("*                                    *");
+     //System.out.println("*          " + initials + " Snack Bar             *");
+     //System.out.println("*                                    *");
+     //System.out.println("*     " +drinksOrderedInput + " " + itemList1 + "..........$" + drinkPrice +     "          *");                      
+     //System.out.println("*     " + candiesOrderedInput +" "+ itemList2 + "..........$" + candyPrice    +    "         *");     
+     //System.out.println("*     " + hotdogsOrderedInput + " "+ itemList3 + "..........$" + hotDogPrice +       "       *");     
+     //System.out.println("*     "+ hamburgersOrderedInput +" "+ itemList4 +"..........$" + hamburgerPrice +       "      *");     
+     //System.out.println("*     Order number: " + orderNumber +            "               *"); 
+     //System.out.println("*     Total Cost: $"   + value+                            "             *");   
+     //System.out.println("*                                    *");
+     //System.out.println("*                                    *");    
+     //System.out.println("**************************************");
+   String row = "* %-34s *%n";
+   String border = "*".repeat(38);
+
+  System.out.println(border);
+  System.out.printf(row, "");
+  System.out.printf(row, center(initials + " Snack Bar", 34));
+  System.out.printf(row, "");
+  System.out.printf(row, center(drinks + " " + itemList1 + ".........$" + String.format("%.2f", drinkPrice), 34));
+  System.out.printf(row, center(candies + " " + itemList2 + ".........$" + String.format("%.2f", candyPrice), 34));
+  System.out.printf(row, center(hotdogs + " " + itemList3 + "........$" + String.format("%.2f", hotDogPrice), 34));
+  System.out.printf(row, center(hamburgers + " " + itemList4 + "......$" + String.format("%.2f", hamburgerPrice), 34));
+  System.out.printf(row, center("Order number: " + orderNumber, 34));
+  System.out.printf(row, center("Total Cost: $" + String.format("%.2f", value), 34));
+  System.out.printf(row, "");
+  System.out.println(border);
    } 
 }
