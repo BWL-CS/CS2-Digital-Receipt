@@ -42,13 +42,14 @@ public class Main {
       String hamburgersOrderedInput = input.nextLine();
       System.out.print("Enter your full high school name: ");
       String nameOfSchool = input.nextLine();
-      String firstLetter = nameOfSchool.substring(0, 1);
-      int position = nameOfSchool.indexOf(" ");
-      String secondLetter = nameOfSchool.substring(position + 1, position + 2);
-      String remainingWords = nameOfSchool.substring(position + 1);
-      int position2 = remainingWords.indexOf(" ");
-      String thirdLetter = remainingWords.substring(position2 + 1, position2 + 2);
-      String initials = (firstLetter + secondLetter + thirdLetter).toUpperCase();
+      nameOfSchool = nameOfSchool.trim();
+      String initials = nameOfSchool.substring(0, 1);
+      for (int i = 0; i < nameOfSchool.length() - 1; i++) {
+        if (nameOfSchool.substring(i, i + 1).equals(" ")) {
+        initials = initials + nameOfSchool.substring(i + 1, i + 2);
+        }
+      }
+      initials = initials.toUpperCase();
       int drinks = Integer.parseInt(drinksOrderedInput);
       int candies =Integer.parseInt(candiesOrderedInput);
       int hotdogs =Integer.parseInt(hotdogsOrderedInput);
